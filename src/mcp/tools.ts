@@ -485,6 +485,17 @@ export function registerTools(server: McpServer, deps: ToolDeps): void {
     },
     run(deps, briefingData),
   );
+  server.registerTool(
+    "get_daily_summaries",
+    {
+      title: "Daily Summaries",
+      description: "가민 일일 요약 데이터(바디 배터리, 수면, HRV 등)를 가져옵니다.",
+      inputSchema: {
+        date: dateArg.optional().describe("조회할 날짜. 기본값: 오늘"),
+      },
+    },
+    run(deps, dailySummaries),
+  );
 
   server.registerTool(
     "training_load",
