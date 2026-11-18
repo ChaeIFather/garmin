@@ -494,7 +494,8 @@ export function registerTools(server: McpServer, deps: ToolDeps): void {
         date: dateArg.optional().describe("조회할 날짜. 기본값: 오늘"),
       },
     },
-    run(deps, dailySummaries),
+    run(deps, briefingData),
+
   );
 
   server.registerTool(
